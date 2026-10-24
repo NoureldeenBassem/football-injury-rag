@@ -1,15 +1,13 @@
-# RAG pipeline + app
+# RAG pipeline + Streamlit app (also used by Streamlit Community Cloud)
 chromadb==1.5.9
 sentence-transformers==6.2.0
 google-genai==2.33.0
 httpx==0.28.1
 python-dotenv==1.2.2
 streamlit==1.61.1
-# torch: for GPU embeddings install the CUDA build, e.g.
-#   pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cu130
-torch==2.13.0
 
-# Data collection scripts only (src/collect_injury_data.py, src/add_injury_stats.py)
-biopython==1.88
-pymupdf==1.28.0
-pandas==3.0.5
+# torch: CPU-only wheel on Linux (Streamlit Cloud, Python 3.12) to avoid the multi-GB CUDA build.
+# For GPU embeddings locally, install the CUDA build instead, e.g.
+#   pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cu130
+torch @ https://download.pytorch.org/whl/cpu/torch-2.13.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl ; sys_platform == "linux"
+torch==2.13.0 ; sys_platform != "linux"

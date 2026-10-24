@@ -31,7 +31,8 @@ sport-rag/
 ├── app/ui.py           # Streamlit chat interface
 ├── eval/eval_set.csv   # test questions with expected topic
 ├── outputs/            # baseline answers, eval results
-├── requirements.txt
+├── requirements.txt        # app + pipeline (CPU torch on Linux)
+├── requirements-data.txt   # + data collection packages
 ├── .env.example        # never commit real keys
 └── README.md
 ```
@@ -39,14 +40,17 @@ sport-rag/
 ## Setup
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt        # app + RAG pipeline
+pip install -r requirements-data.txt   # also the data collection scripts
 ```
 
 For GPU embeddings, install the CUDA build of torch (see `requirements.txt`).
 
 The repo includes `data/processed/` (the final corpus) but not `data/raw/` (FIFA PDFs and
-third-party injury datasets) or `index/`, so build the index once after cloning. Without
-`data/raw/cleaned_corpus.json` the index has slightly fewer chunks than listed above.
+third-party injury datasets) or `index/`. On first start the app downloads the prebuilt
+index (245 MB, [release `index-v1`](https://github.com/NoureldeenBassem/football-injury-rag/releases/tag/index-v1))
+into `index/`. To build it yourself instead, run `python -m src.build_index`; without
+`data/raw/cleaned_corpus.json` it has slightly fewer chunks than listed above.
 
 Set your Gemini API key, either as an environment variable `GEMINI_API_KEY` or in a
 `.env` file (copy `.env.example`).
@@ -62,6 +66,15 @@ python -m src.generate            # chat in the terminal
 python -m src.generate --models   # list available Gemini models
 python -m src.evaluate            # run the eval set -> outputs/
 ```
+
+## Deploy on Streamlit Community Cloud
+
+- **Main file path:** `app/ui.py`
+- **Advanced settings → Python version:** 3.12
+- **Advanced settings → Secrets:** `GEMINI_API_KEY = "your-key"`
+
+The first start downloads the index and the embedding model, so it takes a few minutes.
+Everyone using the deployed app shares your Gemini quota.
 
 ## How it works
 

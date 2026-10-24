@@ -26,7 +26,8 @@ TOPIC_LABELS = {"prevention": "Prevention", "rehabilitation": "Rehabilitation",
                 "recovery_time": "Recovery time", None: "No topic"}
 
 
-@st.cache_resource(show_spinner="Loading the index and embedding model...")
+@st.cache_resource(show_spinner="Loading the index and embedding model "
+                                "(the first start downloads the 245 MB index)...")
 def load_index():
     return collection().count()
 

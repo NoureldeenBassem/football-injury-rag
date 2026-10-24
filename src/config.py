@@ -16,6 +16,10 @@ CORPUS = PROCESSED_DIR / "corpus_full.jsonl"   # main corpus, "topics" list per 
 EXTRA_CORPUS = RAW_DIR / "cleaned_corpus.json"  # extra PMC articles, single "topic" string
 
 # Index
+# Prebuilt index (GitHub release asset), downloaded when index/ is missing (e.g. on Streamlit Cloud).
+INDEX_URL = ("https://github.com/NoureldeenBassem/football-injury-rag/releases/download/"
+             "index-v1/index.zip")
+INDEX_SHA256 = "d23c89eba01c961e7d0f3089b5c67e0859288152deb5c6c63ee43dccb12e0e09"
 COLLECTION = "football_injuries"
 EMBED_MODEL = "BAAI/bge-small-en-v1.5"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "

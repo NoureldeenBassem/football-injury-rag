@@ -1,0 +1,5 @@
+# Only for the data collection scripts (src/collect_injury_data.py, src/add_injury_stats.py)
+-r requirements.txt
+biopython==1.88
+pymupdf==1.28.0
+pandas==3.0.5

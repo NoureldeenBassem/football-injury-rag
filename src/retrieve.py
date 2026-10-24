@@ -1,10 +1,18 @@
 """Vector search over the Chroma index, with topic filtering and statistics lookup."""
+import hashlib
+import shutil
+import tempfile
+import zipfile
+from pathlib import Path
+
 import chromadb
+import httpx
 import torch
 from sentence_transformers import SentenceTransformer
 
-from src.config import (COLLECTION, EMBED_MODEL, FETCH_FACTOR, INDEX_DIR, MAX_PER_ARTICLE,
-                        MIN_HITS, QUERY_PREFIX, STATS_SOURCE, TOP_K)
+from src.config import (COLLECTION, EMBED_MODEL, FETCH_FACTOR, INDEX_DIR, INDEX_SHA256,
+                        INDEX_URL, MAX_PER_ARTICLE, MIN_HITS, QUERY_PREFIX, STATS_SOURCE,
+                        TOP_K)
 
 _model = None
 _col = None
@@ -19,9 +27,37 @@ def embedder():
     return _model
 
 
+def ensure_index(target=INDEX_DIR, url=INDEX_URL, sha256=INDEX_SHA256):
+    """Download and unpack the prebuilt index into `target` if it isn't there yet."""
+    target = Path(target)
+    if (target / "chroma.sqlite3").exists():
+        return
+    print(f"Index not found in {target}; downloading {url}", flush=True)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=target.parent) as tmp:
+        zip_path = Path(tmp) / "index.zip"
+        digest = hashlib.sha256()
+        with httpx.stream("GET", url, follow_redirects=True, timeout=120) as r:
+            r.raise_for_status()
+            with open(zip_path, "wb") as f:
+                for block in r.iter_bytes(1 << 20):
+                    f.write(block)
+                    digest.update(block)
+        if digest.hexdigest() != sha256:
+            raise RuntimeError(f"Downloaded index checksum mismatch ({digest.hexdigest()})")
+        unpacked = Path(tmp) / "index"
+        with zipfile.ZipFile(zip_path) as z:
+            z.extractall(unpacked)
+        if target.exists():
+            shutil.rmtree(target)  # leftover partial folder without chroma.sqlite3
+        shutil.move(str(unpacked), str(target))
+    print(f"Index ready in {target}", flush=True)
+
+
 def collection():
     global _col
     if _col is None:
+        ensure_index()
         embedder()
         _col = chromadb.PersistentClient(path=str(INDEX_DIR)).get_collection(COLLECTION)
     return _col
