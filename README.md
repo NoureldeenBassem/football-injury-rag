@@ -8,7 +8,8 @@ English, Arabic and Franco-Arab (Egyptian Arabic in Latin letters).
   statistics from professional-player injury records) + 94 extra PMC articles
 - **Index:** 35,597 chunks (~1,200 chars, 200 overlap) in ChromaDB, embedded locally with
   `BAAI/bge-small-en-v1.5`
-- **LLM:** Gemini via the `google-genai` SDK (model set in `src/config.py`)
+- **LLM:** Gemini free tier via the `google-genai` SDK. `LLMS` in `src/config.py` lists
+  several models; when one hits its daily limit the app switches to the next.
 
 ## Project structure
 
@@ -89,6 +90,10 @@ Everyone using the deployed app shares your Gemini quota.
    user's language.
 
 Gemini calls retry on rate limits (429), overload (503) and timeouts. The free tier allows
-about 20 requests per model per day, and each question uses 2.
+about 20 requests per model per day, and each question uses 2. When a model's daily limit
+is used up (or the model is unavailable), the next model in `LLMS` takes over until the
+limit resets, so the app stays free and works for several times longer each day. The
+answer shows which model wrote it. Lite models answer when the main ones are used up and
+are somewhat less precise.
 
 *Not medical advice: see a doctor or physiotherapist for a personal diagnosis.*

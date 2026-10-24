@@ -10,7 +10,7 @@ import csv
 import sys
 from datetime import datetime
 
-from src.config import EVAL_SET, LLM, OUTPUTS_DIR, STATS_SOURCE
+from src.config import EVAL_SET, OUTPUTS_DIR, STATS_SOURCE
 from src.generate import DailyQuotaExceeded, rag, source_list
 
 
@@ -19,7 +19,7 @@ def main():
     with open(EVAL_SET, encoding="utf-8") as f:
         cases = list(csv.DictReader(f))
 
-    rows, answers = [], [f"# Eval answers ({LLM}, {datetime.now():%Y-%m-%d %H:%M})\n"]
+    rows, answers = [], [f"# Eval answers ({datetime.now():%Y-%m-%d %H:%M})\n"]
     for case in cases:
         q = case["question"]
         print(f"> {q}", flush=True)
@@ -39,13 +39,15 @@ def main():
             "topic_ok": r["rewrite"]["topic"] == case["expected_topic"],
             "language": r["rewrite"].get("language", ""),
             "search_query": r["rewrite"]["query"],
+            "model": r["model"],
             "sources": len(hits),
             "distinct_articles": articles,
             "stats_chunks": stats,
             "stats_ok": (stats > 0) == expects_stats,
         }
         rows.append(row)
-        answers.append(f"## {q}\n\n*{row['search_query']} · topic: {row['predicted_topic']}*\n\n"
+        answers.append(f"## {q}\n\n*{row['search_query']} · topic: {row['predicted_topic']}"
+                       f" · model: {row['model']}*\n\n"
                        f"{r['answer']}\n\n**Sources**\n\n```\n{source_list(hits)}\n```\n")
         print(f"  topic {row['predicted_topic']} ({'OK' if row['topic_ok'] else 'WRONG'}) | "
               f"{articles} articles | {stats} stats chunks "

@@ -36,7 +36,16 @@ MAX_PER_ARTICLE = 2
 FETCH_FACTOR = 8      # over-fetch so the per-article cap can still fill TOP_K
 
 # Generation
-LLM = "gemini-3.5-flash"
+# Free-tier Gemini models, tried in order. Each has its own daily request limit (~20 on the
+# free tier); when one is used up, the next is used until its limit resets. No billing needed.
+LLMS = [
+    "gemini-flash-latest",
+    "gemini-3.5-flash",
+    "gemini-flash-lite-latest",
+    "gemini-3.1-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+]
 REQUEST_TIMEOUT_MS = 60_000
 
 

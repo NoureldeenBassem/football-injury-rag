@@ -11,7 +11,7 @@ import httpx
 import streamlit as st
 from google.genai import errors
 
-from src.config import LLM
+from src.config import LLMS
 from src.generate import DailyQuotaExceeded, answer_stream, rewrite_query
 from src.retrieve import collection, retrieve
 
@@ -47,6 +47,11 @@ def render_search(info):
                + (f" · stats: {', '.join(info['injuries'])}" if info["injuries"] else ""))
 
 
+def render_model(model):
+    if model:
+        st.caption(f":material/smart_toy: Answered by {model}")
+
+
 chunks = load_index()
 
 with st.sidebar:
@@ -54,7 +59,8 @@ with st.sidebar:
     st.write("Answers about **prevention**, **rehabilitation** and **recovery time**, "
              "with citations from PMC papers, FIFA 11+ manuals and recovery statistics.")
     st.write("Ask in English, Arabic or Franco-Arab.")
-    st.caption(f"{chunks:,} chunks indexed · {LLM}")
+    st.caption(f"{chunks:,} chunks indexed · Gemini free tier ({len(LLMS)} models, "
+               "switches when one hits its daily limit)")
     if st.button("New chat", icon=":material/refresh:", width="stretch"):
         st.session_state.messages = []
         st.rerun()
@@ -70,6 +76,7 @@ for msg in st.session_state.messages:
             render_search(msg["search"])
         st.markdown(msg["content"])
         if msg.get("hits"):
+            render_model(msg.get("model"))
             render_sources(msg["hits"])
 
 prompt = st.chat_input("Ask about a football injury...", submit_mode="disable")
@@ -99,13 +106,16 @@ if prompt:
                       "injuries": rq["injuries"]}
             render_search(search)
             notice = st.empty()
+            info = {}
             text = st.write_stream(answer_stream(
-                prompt, hits, rq.get("language", "the user's language"),
+                prompt, hits, rq.get("language", "the user's language"), info=info,
                 on_retry=lambda m: notice.warning(f"Gemini is busy: {m}", icon=":material/hourglass:")))
             notice.empty()
+            render_model(info.get("model"))
             render_sources(hits)
             st.session_state.messages.append(
-                {"role": "assistant", "content": text, "hits": hits, "search": search})
+                {"role": "assistant", "content": text, "hits": hits, "search": search,
+                 "model": info.get("model")})
         except DailyQuotaExceeded as e:
             st.error(str(e), icon=":material/block:")
             st.session_state.messages.pop()
