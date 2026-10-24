@@ -75,6 +75,8 @@ python -m src.evaluate            # run the eval set -> outputs/
 - **Advanced settings → Secrets:** `GEMINI_API_KEY = "your-key"`
 
 The first start downloads the index and the embedding model, so it takes a few minutes.
+After pushing changes to `src/`, use **Manage app → Reboot app**: the automatic update
+reruns `app/ui.py` but keeps the old `src` modules in memory (the file watcher is off).
 Everyone using the deployed app shares your Gemini quota.
 
 ## How it works
