@@ -1,5 +1,9 @@
 # Football Injury RAG
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://football-injury-rag-bjksluynp5svis9ucrcqhz.streamlit.app/)
+
+**Live app:** https://football-injury-rag-bjksluynp5svis9ucrcqhz.streamlit.app/
+
 A retrieval-augmented Q&A assistant for football (soccer) injuries: **prevention**,
 **rehabilitation** and **recovery time**. Answers cite their sources ([n]) and work in
 English, Arabic and Franco-Arab (Egyptian Arabic in Latin letters).
