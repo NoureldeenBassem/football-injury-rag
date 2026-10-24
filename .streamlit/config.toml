@@ -1,0 +1,7 @@
+[server]
+# The watcher walks every transformers submodule and logs torchvision import errors.
+fileWatcherType = "none"
+headless = true
+
+[browser]
+gatherUsageStats = false

@@ -1,0 +1,14 @@
+# Secrets
+.env
+
+# Persisted Chroma index (rebuild with: python -m src.build_index)
+index/
+
+# Raw inputs: FIFA PDFs and third-party injury datasets are not redistributed
+data/raw/
+
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+.claude/

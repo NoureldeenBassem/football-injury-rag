@@ -1,0 +1,223 @@
+key,injury,cases,median_days,p25_days,p75_days,p90_days,median_games
+muscle injury,Muscle injury,7393,25.0,15.0,41.0,68.0,4.0
+hamstring injury,Hamstring injury,7038,30.0,18.0,52.0,92.0,5.0
+knee injury,Knee injury,6091,45.0,22.0,95.0,207.0,6.0
+muscular problems,muscular problems,5817,13.0,8.0,24.0,42.0,2.0
+ankle injury,Ankle injury,5167,29.0,14.0,60.0,110.0,4.0
+cruciate ligament tear,Cruciate ligament tear,4241,219.0,184.0,274.0,336.0,27.0
+knock,Knock,3430,14.0,7.0,29.0,56.0,2.0
+knee problems,Knee problems,3253,19.0,9.0,42.0,87.0,3.0
+thigh problems,Thigh problems,3000,17.0,9.0,31.0,57.0,3.0
+torn muscle fiber,Torn muscle fiber,2856,27.0,19.0,39.0,56.0,4.0
+shoulder injury,Shoulder injury,2377,38.0,17.0,87.0,139.0,5.0
+calf injury,Calf injury,2310,26.0,15.0,44.0,70.0,4.0
+adductor pain,Adductor pain,1908,15.0,8.0,26.0,50.0,2.0
+foot injury,Foot injury,1713,29.0,13.0,61.0,111.0,4.0
+adductor injury,Adductor injury,1607,23.0,15.0,45.0,89.0,4.0
+groin injury,Groin injury,1470,26.0,14.0,54.0,101.0,4.0
+ankle sprain,Ankle sprain,1416,21.0,11.0,36.0,57.0,3.0
+hamstring strain,Hamstring strain,1392,21.0,12.0,35.0,57.0,4.0
+knee surgery,Knee surgery,1341,118.0,62.0,204.0,292.0,14.0
+back problems,Back problems,1277,13.0,7.0,32.0,72.0,2.0
+calf problems,Calf problems,1252,15.0,8.0,27.0,45.0,3.0
+muscle fatigue,Muscle fatigue,1140,9.0,6.0,15.0,26.0,2.0
+minor knock,minor knock,1104,8.0,5.0,11.0,16.0,1.0
+meniscus injury,Meniscus injury,1008,60.0,36.0,108.0,184.0,8.0
+leg injury,Leg injury,993,25.0,14.0,49.0,93.0,4.0
+hip injury,Hip injury,915,29.0,15.0,73.0,163.0,5.0
+hamstring muscle injury,Hamstring muscle injury,876,27.0,19.0,44.0,69.0,5.0
+concussion,concussion,843,12.0,7.0,20.0,34.0,2.0
+ankle problems,Ankle problems,830,12.0,7.0,28.0,48.0,2.0
+achilles tendon problems,Achilles tendon problems,817,30.0,14.0,67.0,139.0,4.0
+groin problems,Groin problems,812,22.0,10.0,46.0,92.0,3.0
+bruise,bruise,797,11.0,7.0,21.0,33.0,2.0
+torn muscle bundle,Torn muscle bundle,783,34.0,22.0,57.0,92.0,5.0
+metatarsal fracture,Metatarsal fracture,776,85.0,63.0,108.0,140.0,11.0
+cruciate ligament injury,Cruciate ligament injury,756,233.0,162.0,297.0,375.0,26.0
+dead leg,Dead leg,734,19.0,10.0,33.0,55.0,3.0
+back injury,Back injury,726,28.0,12.0,83.0,148.0,4.0
+strain,strain,677,13.0,8.0,22.0,36.0,2.0
+injury to the ankle,Injury to the ankle,638,22.0,11.0,50.0,94.0,3.0
+head injury,Head injury,603,12.0,7.0,24.0,57.0,2.0
+achilles tendon rupture,Achilles tendon rupture,576,188.0,151.0,246.0,314.0,23.0
+muscle strain,Muscle strain,569,20.0,13.0,33.0,58.0,3.0
+stomach flu,Stomach flu,560,5.0,4.0,8.0,11.0,1.0
+ligament injury,Ligament injury,535,42.0,22.0,76.0,145.0,6.0
+hip problems,Hip problems,506,15.0,8.0,40.0,107.0,2.0
+meniscus tear,Meniscus tear,476,62.0,40.0,124.0,184.0,8.0
+surgery,surgery,443,71.0,33.0,126.0,176.0,8.0
+torn thigh muscle,Torn thigh muscle,429,36.0,22.0,75.0,130.0,6.0
+torn ankle ligaments,Torn ankle ligaments,422,40.0,24.0,64.0,121.0,6.0
+calf strain,Calf strain,416,23.0,13.0,38.0,59.0,4.0
+inner ligament injury,Inner ligament injury,413,43.0,28.0,64.0,97.0,6.0
+broken fibula,Broken fibula,392,106.0,74.0,156.0,216.0,15.0
+torn lateral knee ligament,Torn lateral knee ligament,388,93.0,48.0,191.0,275.0,11.0
+broken nose bone,Broken nose bone,378,13.0,9.0,21.0,33.0,2.0
+cruciate ligament surgery,Cruciate ligament surgery,360,224.0,180.0,275.0,349.0,26.0
+toe injury,Toe injury,353,22.0,10.0,50.0,82.0,3.0
+inflammation of pubic bone,Inflammation of pubic bone,353,62.0,32.0,118.0,183.0,8.0
+ankle surgery,Ankle surgery,349,93.0,60.0,134.0,193.0,12.0
+broken collarbone,Broken collarbone,344,58.0,41.0,75.0,103.0,7.0
+muscle tear,Muscle tear,338,35.0,21.0,69.0,105.0,5.0
+calf muscle tear,Calf muscle tear,338,30.0,21.0,49.0,75.0,5.0
+foot bruise,Foot bruise,334,10.0,6.0,22.0,42.0,2.0
+broken foot,Broken foot,331,78.0,54.0,110.0,173.0,11.0
+groin surgery,Groin surgery,321,59.0,37.0,93.0,147.0,8.0
+knee bruise,Knee bruise,307,14.0,7.0,28.0,45.0,2.0
+broken toe,Broken toe,304,36.0,23.0,61.0,82.0,5.0
+pubalgia,Pubalgia,303,44.0,24.0,89.0,157.0,6.0
+meniscus damage,Meniscus damage,300,68.0,40.0,123.0,202.0,10.0
+bruised ribs,Bruised ribs,297,12.0,8.0,23.0,39.0,2.0
+rib fracture,Rib fracture,291,29.0,19.0,43.0,63.0,4.0
+hand injury,Hand injury,287,24.0,11.0,46.0,85.0,3.0
+torn lateral ankle ligament,Torn lateral ankle ligament,286,30.0,19.0,50.0,78.0,5.0
+broken hand,Broken hand,277,35.0,22.0,62.0,101.0,5.0
+groin strain,Groin strain,274,15.0,9.0,31.0,58.0,3.0
+torn knee ligaments,Torn knee ligaments,273,174.0,63.0,255.0,307.0,16.0
+syndesmotic ligament tear,Syndesmotic ligament tear,271,81.0,58.0,113.0,148.0,10.0
+knee medial ligament tear,Knee medial ligament tear,270,62.0,43.0,95.0,153.0,9.0
+ligament stretching,Ligament stretching,261,19.0,10.0,36.0,60.0,3.0
+lumbago,Lumbago,260,10.0,6.0,20.0,40.0,2.0
+inner knee ligament tear,Inner knee ligament tear,250,46.0,32.0,61.0,81.0,6.0
+elbow injury,Elbow injury,246,36.0,20.0,64.0,104.0,5.0
+inner ligament stretch of the knee,Inner ligament stretch of the knee,237,24.0,12.0,44.0,63.0,4.0
+torn muscle fiber in the adductor area,Torn muscle fiber in the adductor area,231,25.0,15.0,37.0,71.0,4.0
+capsular injury,Capsular injury,219,15.0,8.0,30.0,49.0,2.0
+cartilage damage,Cartilage damage,219,172.0,90.0,274.0,398.0,21.0
+muscle stiffness,muscle stiffness,216,11.0,6.0,20.0,34.0,2.0
+broken finger,Broken finger,215,38.0,22.0,62.0,98.0,5.0
+broken tibia,Broken tibia,212,156.0,106.0,211.0,290.0,20.0
+abdominal muscle strain,Abdominal muscle strain,212,21.0,12.0,35.0,61.0,3.0
+injury to abdominal muscles,Injury to abdominal muscles,211,25.0,12.0,58.0,118.0,4.0
+muscle fiber tear,Muscle fiber tear,211,24.0,17.0,36.0,65.0,4.0
+inguinal hernia,Inguinal hernia,210,56.0,34.0,92.0,163.0,8.0
+patellar tendon problems,Patellar tendon problems,206,43.0,18.0,112.0,197.0,6.0
+broken ankle,Broken ankle,206,107.0,74.0,152.0,180.0,14.0
+heart problems,heart problems,205,102.0,45.0,183.0,312.0,11.0
+metacarpal fracture,Metacarpal fracture,202,29.0,13.0,49.0,72.0,3.0
+contracture,Contracture,201,11.0,7.0,17.0,28.0,2.0
+sprain,sprain,199,20.0,11.0,32.0,47.0,3.0
+broken arm,Broken arm,198,64.0,38.0,100.0,135.0,10.0
+tendon rupture,Tendon rupture,196,94.0,56.0,128.0,182.0,11.0
+tendonitis,Tendonitis,195,25.0,15.0,60.0,102.0,4.0
+torn ligaments,Torn ligaments,195,43.0,29.0,91.0,216.0,6.0
+broken cheekbone,Broken cheekbone,193,31.0,21.0,45.0,63.0,4.0
+achilles tendon irritation,Achilles tendon irritation,192,29.0,14.0,58.0,99.0,4.0
+heel injury,Heel injury,192,36.0,16.0,80.0,180.0,5.0
+finger injury,Finger injury,189,25.0,11.0,49.0,89.0,3.0
+tonsillitis,Tonsillitis,189,9.0,6.0,16.0,25.0,1.0
+shin injury,Shin injury,185,39.0,16.0,77.0,131.0,6.0
+achilles tendon surgery,Achilles tendon surgery,180,172.0,118.0,243.0,313.0,19.0
+herniated disc,Herniated disc,179,85.0,44.0,136.0,219.0,11.0
+foot surgery,Foot surgery,178,83.0,44.0,126.0,182.0,10.0
+outer ligament tear,Outer ligament tear,177,41.0,22.0,75.0,135.0,5.0
+bone edema,Bone edema,175,41.0,20.0,85.0,137.0,6.0
+broken leg,Broken leg,170,148.0,103.0,229.0,346.0,20.0
+internal ligament tear,Internal ligament tear,169,52.0,36.0,82.0,110.0,7.0
+bruise on ankle,Bruise on ankle,166,12.0,7.0,26.0,50.0,2.0
+collateral ligament injury,Collateral ligament injury,163,40.0,28.0,56.0,79.0,6.0
+heel problems,Heel problems,161,14.0,8.0,37.0,62.0,2.0
+inflammation,inflammation,159,13.0,8.0,31.0,62.0,2.0
+eye injury,Eye injury,158,13.0,6.0,38.0,94.0,2.0
+arm injury,Arm injury,158,29.0,13.0,52.0,96.0,4.0
+strain in the thigh and gluteal muscles,Strain in the thigh and gluteal muscles,155,21.0,12.0,30.0,44.0,3.0
+inflammation in the knee,Inflammation in the knee,154,23.0,11.0,54.0,89.0,3.0
+syndesmosis ligament tear,Syndesmosis ligament tear,150,57.0,39.0,87.0,116.0,8.0
+outer ligament problems,Outer ligament problems,147,25.0,15.0,46.0,74.0,4.0
+tear of the lateral meniscus,Tear of the lateral meniscus,145,67.0,46.0,149.0,219.0,10.0
+overstretching,Overstretching,139,20.0,12.0,32.0,42.0,4.0
+neck injury,Neck injury,135,11.0,7.0,22.0,80.0,2.0
+adductor tear,Adductor tear,134,32.0,20.0,92.0,153.0,5.0
+acromioclavicular joint dislocation,Acromioclavicular joint dislocation,132,56.0,30.0,96.0,131.0,6.0
+tendon irritation,Tendon irritation,132,28.0,9.0,48.0,85.0,4.0
+hip flexor problems,Hip flexor problems,131,18.0,9.0,38.0,82.0,3.0
+fatigue fracture,fatigue fracture,130,74.0,34.0,121.0,151.0,10.0
+broken jaw,Broken jaw,128,42.0,29.0,53.0,73.0,5.0
+ankle ligament tear,Ankle ligament tear,127,34.0,22.0,62.0,126.0,5.0
+achilles heel problems,Achilles heel problems,126,31.0,13.0,71.0,182.0,4.0
+appendectomy,Appendectomy,124,25.0,19.0,32.0,47.0,4.0
+pelvic injury,Pelvic injury,123,25.0,11.0,48.0,114.0,4.0
+internal ligament strain,Internal ligament strain,122,24.0,14.0,34.0,57.0,3.0
+tendon tear,Tendon tear,121,64.0,43.0,99.0,151.0,9.0
+bruised knee,Bruised knee,121,13.0,6.0,26.0,48.0,2.0
+arthroscopy,Arthroscopy,119,68.0,39.0,128.0,184.0,9.0
+facial injury,Facial injury,117,14.0,7.0,31.0,57.0,2.0
+wrist fracture,Wrist fracture,107,43.0,22.0,61.0,105.0,5.0
+intestinal virus,Intestinal virus,96,5.0,4.0,8.0,16.0,1.0
+wrist injury,Wrist injury,96,30.0,9.0,62.0,102.0,4.0
+nose surgery,Nose surgery,95,18.0,10.0,32.0,60.0,2.0
+partial muscle tear,Partial muscle tear,95,37.0,22.0,78.0,137.0,6.0
+calf stiffness,Calf stiffness,93,11.0,7.0,17.0,31.0,2.0
+muscle contusion,Muscle contusion,92,15.0,8.0,27.0,46.0,3.0
+shin bruise,Shin bruise,92,9.0,6.0,24.0,55.0,2.0
+hip bruise,Hip bruise,91,10.0,6.0,17.0,34.0,2.0
+facial fracture,Facial fracture,90,34.0,18.0,48.0,92.0,4.0
+cruciate ligament strain,Cruciate ligament strain,89,40.0,23.0,71.0,125.0,6.0
+appendicitis,Appendicitis,89,29.0,18.0,37.0,61.0,4.0
+abdominal problems,Abdominal problems,88,10.0,5.0,20.0,49.0,2.0
+pubic bone irritation,Pubic bone irritation,84,42.0,17.0,75.0,138.0,5.0
+edema in the knee,Edema in the knee,84,25.0,11.0,51.0,95.0,4.0
+stress reaction of the bone,Stress reaction of the bone,83,19.0,10.0,54.0,88.0,3.0
+mononucleation,Mononucleation,82,57.0,34.0,102.0,173.0,7.0
+dental surgery,Dental surgery,81,10.0,7.0,19.0,30.0,2.0
+fracture,fracture,80,43.0,16.0,84.0,152.0,5.0
+nose injury,Nose injury,79,12.0,6.0,21.0,29.0,2.0
+achilles tendon contusion,Achilles tendon contusion,76,26.0,12.0,47.0,90.0,4.0
+tibia and fibula fracture,Tibia and fibula fracture,76,220.0,161.0,318.0,395.0,26.0
+pneumonia,pneumonia,75,8.0,5.0,24.0,50.0,1.0
+patellar tendon rupture,Patellar tendon rupture,73,204.0,140.0,288.0,351.0,27.0
+metatarsal bruise,Metatarsal bruise,73,29.0,13.0,62.0,79.0,4.0
+sore muscles,Sore muscles,69,10.0,6.0,23.0,48.0,2.0
+angina,angina,67,8.0,6.0,15.0,21.0,1.0
+ligament tear,Ligament tear,65,78.0,30.0,216.0,307.0,7.0
+knee collateral ligament strain,Knee collateral ligament strain,65,29.0,16.0,53.0,83.0,4.0
+forearm fracture,Forearm fracture,65,52.0,31.0,84.0,110.0,7.0
+heel spur,Heel spur,64,31.0,14.0,63.0,130.0,4.0
+lumbar vertebra problems,Lumbar vertebra problems,63,29.0,10.0,59.0,91.0,5.0
+broken kneecap,Broken kneecap,60,140.0,79.0,235.0,367.0,15.0
+broken shoulder,Broken shoulder,60,79.0,50.0,114.0,198.0,10.0
+traffic accident,traffic accident,58,17.0,5.0,165.0,364.0,1.0
+chest injury,Chest injury,57,27.0,14.0,58.0,77.0,4.0
+scaphoid fracture,Scaphoid fracture,56,66.0,27.0,106.0,148.0,6.0
+laceration wound,laceration wound,52,14.0,8.0,26.0,52.0,2.0
+knee collateral ligament tear,Knee collateral ligament tear,52,66.0,43.0,123.0,232.0,11.0
+inflammation of ligaments in the knee,Inflammation of ligaments in the knee,51,24.0,20.0,60.0,239.0,5.0
+thumb injury,Thumb injury,50,26.0,11.0,46.0,63.0,4.0
+bruised back,Bruised back,49,11.0,6.0,16.0,29.0,2.0
+hairline crack in foot,Hairline crack in foot,48,54.0,27.0,92.0,107.0,6.0
+inflammation of the sole of the foot,Inflammation of the sole of the foot,48,19.0,12.0,42.0,59.0,3.0
+lower leg fracture,Lower leg fracture,48,37.0,25.0,161.0,228.0,6.0
+partial damage to the cruciate ligament,Partial damage to the cruciate ligament,47,121.0,66.0,234.0,302.0,12.0
+crack bruise,Crack bruise,46,16.0,10.0,28.0,42.0,2.0
+bone bruise,Bone bruise,45,27.0,15.0,54.0,88.0,4.0
+flesh wound,flesh wound,45,14.0,10.0,22.0,31.0,2.0
+arch problems,Arch problems,44,12.0,5.0,30.0,72.0,2.0
+toothache,Toothache,43,5.0,4.0,10.0,20.0,1.0
+patellar tendon irritation,Patellar tendon irritation,43,42.0,14.0,69.0,108.0,5.0
+cervical spine injury,Cervical spine injury,42,22.0,11.0,42.0,97.0,3.0
+cut,Cut,42,18.0,8.0,41.0,56.0,2.0
+vertebral injury,Vertebral injury,41,52.0,22.0,103.0,192.0,8.0
+kidney problems,Kidney problems,40,35.0,20.0,74.0,206.0,6.0
+lumbar vertebra fracture,Lumbar vertebra fracture,40,42.0,33.0,54.0,75.0,7.0
+bronchitis,bronchitis,40,8.0,6.0,15.0,19.0,1.0
+fracture of the eye socket,Fracture of the eye socket,38,30.0,18.0,39.0,64.0,4.0
+right hip flexor problems,Right hip flexor problems,38,21.0,12.0,25.0,45.0,3.0
+elbow fracture,Elbow fracture,38,54.0,36.0,106.0,183.0,8.0
+double ligament tear,double ligament tear,37,37.0,20.0,58.0,106.0,5.0
+inflammation in the ankle joint,Inflammation in the ankle joint,36,24.0,12.0,57.0,85.0,3.0
+meniscus irritation,Meniscus irritation,35,26.0,14.0,60.0,87.0,5.0
+bursitis,Bursitis,35,14.0,8.0,38.0,72.0,2.0
+eyebow fracture,Eyebow fracture,35,41.0,24.0,57.0,76.0,5.0
+dislocation fracture of the ankle joint,Dislocation fracture of the ankle joint,34,141.0,110.0,205.0,285.0,16.0
+broken thumb,Broken thumb,34,30.0,18.0,58.0,79.0,4.0
+skull fracture,Skull fracture,33,80.0,29.0,137.0,273.0,8.0
+depression,depression,33,37.0,23.0,153.0,217.0,8.0
+bone sprain,Bone sprain,33,24.0,11.0,48.0,70.0,4.0
+pneumothorax,Pneumothorax,32,38.0,22.0,55.0,89.0,7.0
+pubic bone bruise,Pubic bone bruise,32,40.0,28.0,102.0,160.0,6.0
+hairline fracture in the fibula,Hairline fracture in the fibula,32,68.0,36.0,115.0,166.0,11.0
+inner ankle ligament tear,Inner ankle ligament tear,32,60.0,39.0,92.0,142.0,8.0
+partial tear of the plantar fascia,Partial tear of the plantar fascia,31,33.0,20.0,54.0,117.0,4.0
+capsule rupture,Capsule rupture,30,21.0,14.0,39.0,94.0,2.0
+bruise on the ankle joint,Bruise on the ankle joint,30,13.0,8.0,25.0,99.0,3.0
+inner ligament tear in ankle joint,Inner ligament tear in ankle joint,30,38.0,22.0,76.0,98.0,4.0
