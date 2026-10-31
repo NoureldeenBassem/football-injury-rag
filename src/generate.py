@@ -174,6 +174,22 @@ def rewrite_query(question, on_retry=None):
     return data
 
 
+TRANSCRIBE_PROMPT = """Transcribe this voice message, a question about a football (soccer)
+injury, word for word. The speaker may use English, Arabic or Egyptian Arabic; write
+Arabic speech in Arabic script. Return only the transcript, with no notes. If there is
+no speech, return nothing."""
+
+
+def transcribe(audio, mime_type="audio/wav", on_retry=None):
+    """Turn a recorded voice question (audio bytes) into text."""
+    resp = with_retry(lambda model: client().models.generate_content(
+        model=model,
+        contents=[TRANSCRIBE_PROMPT, types.Part.from_bytes(data=audio, mime_type=mime_type)],
+        config=types.GenerateContentConfig(temperature=0),
+    ), on_retry=on_retry)
+    return (resp.text or "").strip()
+
+
 ANSWER_PROMPT = """You are a football (soccer) injury assistant. Answer the user's question
 using ONLY the numbered sources below. Cite sources inline as [n]. If the sources do
 not contain the answer, say so. Keep it practical and well structured. Remind the user

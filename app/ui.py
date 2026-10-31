@@ -12,7 +12,7 @@ import streamlit as st
 from google.genai import errors
 
 from src.config import LLMS
-from src.generate import DailyQuotaExceeded, answer_stream, rewrite_query
+from src.generate import DailyQuotaExceeded, answer_stream, rewrite_query, transcribe
 from src.retrieve import collection, retrieve
 from app.theme import hero, inject_theme
 
@@ -56,6 +56,20 @@ def render_model(model):
         st.caption(f":material/smart_toy: Answered by {model}")
 
 
+def transcribe_voice(voice):
+    """Text of a recorded question, or None (with an error shown) if Gemini failed."""
+    try:
+        with st.spinner("Listening..."):
+            return transcribe(voice.getvalue(), voice.type or "audio/wav")
+    except DailyQuotaExceeded as e:
+        st.error(str(e), icon=":material/block:")
+    except errors.APIError as e:
+        st.error(f"Gemini error {e.code}: {e.message}", icon=":material/error:")
+    except httpx.HTTPError as e:
+        st.error(f"Could not reach Gemini: {e}", icon=":material/wifi_off:")
+    return None
+
+
 chunks = load_index()
 
 with st.sidebar:
@@ -63,7 +77,8 @@ with st.sidebar:
     st.caption("Football Injury Assistant")
     st.write("Answers about **prevention**, **rehabilitation** and **recovery time**, "
              "with citations from PMC papers, FIFA 11+ manuals and recovery statistics.")
-    st.write("Ask in English, Arabic or Franco-Arab.")
+    st.write("Ask in English, Arabic or Franco-Arab, by typing or with the "
+             ":material/mic: button.")
     st.caption(f"{chunks:,} chunks indexed · Gemini free tier ({len(LLMS)} models, "
                "switches when one hits its daily limit)")
     if st.button("New chat", icon=":material/refresh:", width="stretch"):
@@ -77,6 +92,8 @@ if "messages" not in st.session_state:
 
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"], avatar=AVATARS[msg["role"]]):
+        if msg.get("audio"):
+            st.audio(msg["audio"], format="audio/wav")
         if msg.get("search"):
             render_search(msg["search"])
         st.markdown(msg["content"])
@@ -84,9 +101,12 @@ for msg in st.session_state.messages:
             render_model(msg.get("model"))
             render_sources(msg["hits"])
 
-prompt = st.chat_input("Ask about a football injury...", submit_mode="disable")
+submitted = st.chat_input("Ask about a football injury, or record a question...",
+                          accept_audio=True, submit_mode="disable")
+prompt = submitted.text.strip() if submitted else ""
+voice = submitted.audio if submitted else None
 
-if not st.session_state.messages and not prompt:
+if not st.session_state.messages and not submitted:
     welcome = st.empty()
     with welcome.container():
         hero()
@@ -95,11 +115,21 @@ if not st.session_state.messages and not prompt:
         prompt = SUGGESTIONS[picked]
         welcome.empty()
 
-if prompt:
-    st.session_state.messages.append({"role": "user", "content": prompt})
+if prompt or voice:
     with st.chat_message("user", avatar=AVATARS["user"]):
-        st.markdown(prompt)
+        if voice:
+            st.audio(voice)
+            heard = transcribe_voice(voice)
+            if heard == "":
+                st.warning("No speech was heard. Try recording again.", icon=":material/mic_off:")
+            prompt = " ".join(p for p in (prompt, heard) if p)
+        if prompt:
+            st.markdown(prompt)
+    if prompt:
+        st.session_state.messages.append({"role": "user", "content": prompt,
+                                          "audio": voice.getvalue() if voice else None})
 
+if prompt:
     with st.chat_message("assistant", avatar=AVATARS["assistant"]):
         try:
             with st.status("Searching the corpus...", expanded=False) as status:
