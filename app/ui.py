@@ -14,13 +14,17 @@ from google.genai import errors
 from src.config import LLMS
 from src.generate import DailyQuotaExceeded, answer_stream, rewrite_query
 from src.retrieve import collection, retrieve
+from app.theme import hero, inject_theme
 
-st.set_page_config(page_title="Football Injury Assistant", page_icon=":material/sports_soccer:")
+st.set_page_config(page_title="PitchSide AI · Football Injury Assistant", page_icon=":material/sports_soccer:")
+inject_theme()
+
+AVATARS = {"user": ":material/person:", "assistant": ":material/sports_soccer:"}
 
 SUGGESTIONS = {
-    ":blue[:material/shield:] Prevent a hamstring injury": "How can I prevent a hamstring injury?",
-    ":green[:material/healing:] Ankle sprain (Franco-Arab)": "ezay at3afa men eltewa2 el kahl?",
-    ":orange[:material/timer:] ACL recovery time": "How long does an ACL tear take to recover from?",
+    ":primary[:material/shield:] Prevent a hamstring injury": "How can I prevent a hamstring injury?",
+    ":primary[:material/healing:] Ankle sprain (Franco-Arab)": "ezay at3afa men eltewa2 el kahl?",
+    ":primary[:material/timer:] ACL recovery time": "How long does an ACL tear take to recover from?",
 }
 TOPIC_LABELS = {"prevention": "Prevention", "rehabilitation": "Rehabilitation",
                 "recovery_time": "Recovery time", None: "No topic"}
@@ -55,7 +59,8 @@ def render_model(model):
 chunks = load_index()
 
 with st.sidebar:
-    st.title(":material/sports_soccer: Football Injury Assistant")
+    st.title(":material/sports_soccer: PitchSide :primary[AI]")
+    st.caption("Football Injury Assistant")
     st.write("Answers about **prevention**, **rehabilitation** and **recovery time**, "
              "with citations from PMC papers, FIFA 11+ manuals and recovery statistics.")
     st.write("Ask in English, Arabic or Franco-Arab.")
@@ -71,7 +76,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
+    with st.chat_message(msg["role"], avatar=AVATARS[msg["role"]]):
         if msg.get("search"):
             render_search(msg["search"])
         st.markdown(msg["content"])
@@ -84,7 +89,7 @@ prompt = st.chat_input("Ask about a football injury...", submit_mode="disable")
 if not st.session_state.messages and not prompt:
     welcome = st.empty()
     with welcome.container():
-        st.markdown("### How can I help?")
+        hero()
         picked = st.pills("Try asking:", list(SUGGESTIONS), label_visibility="collapsed")
     if picked:
         prompt = SUGGESTIONS[picked]
@@ -92,10 +97,10 @@ if not st.session_state.messages and not prompt:
 
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar=AVATARS["user"]):
         st.markdown(prompt)
 
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=AVATARS["assistant"]):
         try:
             with st.status("Searching the corpus...", expanded=False) as status:
                 rq = rewrite_query(prompt, on_retry=lambda m: status.update(

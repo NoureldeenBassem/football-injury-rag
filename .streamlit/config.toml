@@ -5,3 +5,20 @@ headless = true
 
 [browser]
 gatherUsageStats = false
+
+# PitchSide AI look (matches the pitch deck): night-pitch green, neon lime, Oswald + Rubik.
+[theme]
+base = "dark"
+primaryColor = "#C8F031"
+backgroundColor = "#0B1F17"
+secondaryBackgroundColor = "#12301F"
+textColor = "#F3F5EE"
+linkColor = "#C8F031"
+borderColor = "#24553A"
+baseRadius = "0.75rem"
+font = "Rubik:https://fonts.googleapis.com/css2?family=Rubik:wght@300..700&display=swap"
+headingFont = "Oswald:https://fonts.googleapis.com/css2?family=Oswald:wght@400..700&display=swap"
+
+[theme.sidebar]
+backgroundColor = "#08170F"
+secondaryBackgroundColor = "#12301F"
